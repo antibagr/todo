@@ -1,13 +1,10 @@
-# -*- coding: utf-8 -*-
-
 import os
 
-from utils import make_dir, INSTANCE_FOLDER_PATH
+from app.app.utils import INSTANCE_FOLDER_PATH
 
 
 class BaseConfig(object):
-
-    PROJECT = "fbone"
+    PROJECT = "app"
 
     # Get app root path, also can use flask.root_path.
     # ../../config.py
@@ -16,22 +13,21 @@ class BaseConfig(object):
     DEBUG = False
     TESTING = False
 
-    ADMINS = ['youremail@yourdomain.com']
+    ADMINS = ["youremail@yourdomain.com"]
 
     # http://flask.pocoo.org/docs/quickstart/#sessions
-    SECRET_KEY = 'secret key'
+    SECRET_KEY = "secret key"
 
-    LOG_FOLDER = os.path.join(INSTANCE_FOLDER_PATH, 'logs')
+    LOG_FOLDER = os.path.join(INSTANCE_FOLDER_PATH, "logs")
 
     # Fild upload, should override in production.
     # Limited the maximum allowed payload to 16 megabytes.
     # http://flask.pocoo.org/docs/patterns/fileuploads/#improving-uploads
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024
-    UPLOAD_FOLDER = os.path.join(INSTANCE_FOLDER_PATH, 'uploads')
+    UPLOAD_FOLDER = os.path.join(INSTANCE_FOLDER_PATH, "uploads")
 
 
 class DefaultConfig(BaseConfig):
-
     DEBUG = True
 
     SENTRY_DSN = ""
@@ -48,9 +44,9 @@ class DefaultConfig(BaseConfig):
     # disabled by default in the future.
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     # SQLITE for prototyping.
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + INSTANCE_FOLDER_PATH + '/db.sqlite'
+    SQLALCHEMY_DATABASE_URI = "sqlite:///" + INSTANCE_FOLDER_PATH + "/db.sqlite"
     # MYSQL for production.
-    #SQLALCHEMY_DATABASE_URI = 'mysql://username:password@server/db?charset=utf8'
+    # SQLALCHEMY_DATABASE_URI = 'mysql://username:password@server/db?charset=utf8'
 
 
 class TestConfig(BaseConfig):
@@ -59,4 +55,4 @@ class TestConfig(BaseConfig):
     WTF_CSRF_ENABLED = False
 
     SQLALCHEMY_ECHO = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    SQLALCHEMY_DATABASE_URI = "sqlite://"

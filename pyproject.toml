@@ -1,19 +1,54 @@
 [tool.poetry]
 name = "app"
 version = "0.0.1"
-description = "TEMPLATE_DESCRIPTION"
-authors = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
-maintainers = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
+description = "Flask + React todo app"
+authors = ["Anthony Bagrianov <rudiemeant@gmail.com>"]
+maintainers = ["Anthony Bagrianov <rudiemeant@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "3.12.0"
+python = "^3.11.4"
+fabric = "^3.2.2"
+flask = "^3.0.0"
+flask-login = "^0.6.3"
+flask-restful = "^0.3.10"
+flask-sqlalchemy = "^3.1.1"
+flask-testing = "^0.8.1"
+flask-wtf = "^1.2.1"
+jinja2 = "^3.1.2"
+markupsafe = "^2.1.3"
+sqlalchemy = "^2.0.23"
+wtforms = {extras = ["email"], version = "^3.1.1"}
+werkzeug = "^3.0.1"
+aniso8601 = "^9.0.1"
+astroid = "^3.0.1"
+bcrypt = "^4.0.1"
+blinker = "^1.7.0"
+cffi = "^1.16.0"
+click = "^8.1.7"
+colorama = "^0.4.6"
+ecdsa = "^0.18.0"
+gunicorn = "^21.2.0"
+itsdangerous = "^2.1.2"
+lazy-object-proxy = "^1.9.0"
+paramiko = "^3.3.1"
+passlib = "^1.7.4"
+pycparser = "^2.21"
+pycrypto = "^2.6.1"
+pylint = "^3.0.2"
+python-dateutil = "^2.8.2"
+pytz = "^2023.3.post1"
+requests = "^2.31.0"
+six = "^1.16.0"
+speaklater = "^1.3"
+wrapt = "^1.16.0"
+loguru = "^0.7.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "23.11.0"
 isort = "5.12.0"
 flake8 = "6.1.0"
 mypy = "1.7.0"
-bandit = {extras = ["toml"], version = "1.7.5"}
+bandit = { extras = ["toml"], version = "1.7.5" }
 pytest-asyncio = "0.21.1"
 flake8-comments = "0.1.2"
 flake8-print = "5.0.0"
@@ -58,7 +93,7 @@ ignore_missing_imports = true
 
 [tool.bandit]
 skips = [
-    "B311" # Standard pseudo-random generators are not suitable for security/cryptographic purposes
+    "B311", # Standard pseudo-random generators are not suitable for security/cryptographic purposes
 ]
 
 [tool.pytest.ini_options]

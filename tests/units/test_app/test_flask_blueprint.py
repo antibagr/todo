@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-
-import unittest
 from flask_testing import TestCase
 
-from app.app import create_app
-from app.app.user import User
+from app.app.app import create_app
 from app.app.config import TestConfig
 from app.app.extensions import db
+from app.app.user import User
 
 
 class BaseTestCase(TestCase):
